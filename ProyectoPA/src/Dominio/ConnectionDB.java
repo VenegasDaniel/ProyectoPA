@@ -80,7 +80,7 @@ public class ConnectionDB {
     	
     	
     }
-    
+    /**
     public static void insertData(String rut,String name,String lastName,String passwordPerson,String mail,String direction,String phone) throws Exception{
         try{
             PreparedStatement posted = connection.prepareStatement("INSERT INTO Person (rut,name,lastName,passwordPerson,mail,statePerson,direction,phone) VALUES ('"+rut+"', '"+name+"','"+lastName+"','"+passwordPerson+"','"+mail+"','"+direction+"','"+phone+"')");
@@ -90,7 +90,7 @@ public class ConnectionDB {
             System.out.println("Insert Completed.");
         }
     }
-    
+    */
     public void close() {
         connection = null;
         if (connection == null) {
