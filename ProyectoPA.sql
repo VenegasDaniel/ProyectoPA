@@ -7,7 +7,7 @@ create table Person(
 	statePerson boolean not null,
 	direction text not null,
 	image text,
-	phone int,
+	phone text,
 	ruthCompany text,
 	passwordCompany text
 );
@@ -39,8 +39,8 @@ create table shopingCar(
 
 
 select * from person;
-insert into person values('18602347-6','Bartolomé','Cardona','1558','BartoloméCardona@gmail.com','False','Calle215 Casa53');
-insert into person values('24520300-8','Candelaria','Grande','2645','CandelariaGrande@gmail.com','False','Calle412 Casa56');
+insert into person values('18602347-6','Bartolomé','Cardona','1558','BartoloméCardona@gmail.com','True','Calle215 Casa53');
+insert into person values('24520300-8','Candelaria','Grande','2645','CandelariaGrande@gmail.com','False','Calle412 Casa56','c/:example/example','975164','2','2');
 insert into person values('13514370-2','Caridad','Castiyo','6305','CaridadCastiyo@gmail.com','False','Calle442 Casa13');
 insert into person values('26818880-4','Bartolomé','Grasia','3564','BartoloméGrasia@gmail.com','False','Calle148 Casa15');
 insert into person values('26536826-3','Caritina','Guerrero','7135','CaritinaGuerrero@gmail.com','False','Calle470 Casa48');
