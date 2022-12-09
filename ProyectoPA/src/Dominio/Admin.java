@@ -1,24 +1,23 @@
 package Dominio;
 
-import javax.swing.ImageIcon;
 
 public class Admin extends Person {
-	private String ruthCompany;
+	private String rutCompany;
 	private String passwordCompany;
 
-	public Admin(String name, String lastName, String ruth, String password, String mail, ImageIcon image, int phone,boolean state,
-			String ruthCompany, String passwordCompany) {
-		super(name, lastName, ruth, password, mail,state);
-		this.ruthCompany = ruthCompany;
+	public Admin( String rut,String name, String lastName, String password, String mail, String image,
+			String direction, boolean state, int phone, String rutCompany, String passwordCompany) {
+		super(rut,name, lastName, password, mail, image, direction, state, phone);
+		this.rutCompany = rutCompany;
 		this.passwordCompany = passwordCompany;
 	}
 
-	public String getRuthCompany() {
-		return ruthCompany;
+	public String getRutCompany() {
+		return rutCompany;
 	}
 
-	public void setRuthCompany(String ruthCompany) {
-		this.ruthCompany = ruthCompany;
+	public void setRuthCompany(String rutCompany) {
+		this.rutCompany = rutCompany;
 	}
 
 	public String getPasswordCompany() {

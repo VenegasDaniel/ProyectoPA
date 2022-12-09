@@ -1,26 +1,29 @@
 package Dominio;
 
-import javax.swing.ImageIcon;
-
 public class Person {
+	private String rut;
 	private String name;
 	private String lastName;
-	private String ruth;
 	private String password;
 	private String mail;
-	private ImageIcon image;
+	private String image;
 	private String direction;
 	private boolean state;
 	private int phone;
 	
-	public Person(String name, String lastName, String ruth, String password, String mail,boolean state) {
+	
+
+	public Person(String rut,String name, String lastName, String password, String mail, String image,
+			String direction, boolean state, int phone) {
+		this.rut = rut;
 		this.name = name;
 		this.lastName = lastName;
-		this.ruth = ruth;
 		this.password = password;
 		this.mail = mail;
+		this.image = image;
+		this.direction = direction;
 		this.state = state;
-		
+		this.phone = phone;
 	}
 
 	public String getName() {
@@ -39,12 +42,12 @@ public class Person {
 		this.lastName = lastName;
 	}
 
-	public String getRuth() {
-		return ruth;
+	public String getRut() {
+		return rut;
 	}
 
-	public void setRuth(String ruth) {
-		this.ruth = ruth;
+	public void setRut(String ruth) {
+		this.rut = ruth;
 	}
 
 	public String getPassword() {
@@ -63,11 +66,11 @@ public class Person {
 		this.mail = mail;
 	}
 
-	public ImageIcon getImage() {
+	public String getImage() {
 		return image;
 	}
 
-	public void setImage(ImageIcon image) {
+	public void setImage(String image) {
 		this.image = image;
 	}
 

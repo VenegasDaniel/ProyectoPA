@@ -6,6 +6,11 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import ConnectionDataBase.ConnectionDB;
+import GUI.Login;
+import GUI.SignIn;
+
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import java.awt.event.ActionListener;
@@ -13,11 +18,13 @@ import java.awt.event.ActionEvent;
 import javax.swing.SwingConstants;
 import java.awt.Font;
 import java.awt.Color;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class AdminScreen extends JFrame {
 
 	private JPanel contentPane;
-
+	private static ConnectionDB connect;
 	/**
 	 * Launch the application.
 	 */
@@ -25,7 +32,7 @@ public class AdminScreen extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					AdminScreen frame = new AdminScreen();
+					AdminScreen frame = new AdminScreen(connect);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -37,7 +44,7 @@ public class AdminScreen extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public AdminScreen() {
+	public AdminScreen(ConnectionDB connect) {
 		setTitle("Pantalla Administrador");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 791, 529);
@@ -46,21 +53,21 @@ public class AdminScreen extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JButton btnNewButton = new JButton("Agregar Producto");
-		btnNewButton.setBounds(267, 216, 218, 62);
-		contentPane.add(btnNewButton);
-		
-		JButton btnNewButton_1 = new JButton("Eliminar Producto");
-		btnNewButton_1.addActionListener(new ActionListener() {
+		JButton btnNewButton = new JButton("Manejar Productos");
+		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				ProductsAdmin PA = new ProductsAdmin(connect);
+				PA.setVisible(true);
+				AdminScreen.this.dispose();
 			}
 		});
-		btnNewButton_1.setBounds(267, 288, 218, 62);
-		contentPane.add(btnNewButton_1);
-		
-		JButton btnNewButton_2 = new JButton("EditarProducto");
-		btnNewButton_2.setBounds(267, 360, 218, 62);
-		contentPane.add(btnNewButton_2);
+		btnNewButton.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+			}
+		});
+		btnNewButton.setBounds(267, 216, 218, 62);
+		contentPane.add(btnNewButton);
 		
 		JLabel lblNewLabel = new JLabel("Productos");
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
@@ -88,29 +95,20 @@ public class AdminScreen extends JFrame {
 		btnAgregarCategoria.setBounds(10, 216, 218, 62);
 		contentPane.add(btnAgregarCategoria);
 		
-		JButton btnEliminarCategoria = new JButton("Eliminar Categoria");
-		btnEliminarCategoria.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-		btnEliminarCategoria.setBounds(10, 288, 218, 62);
-		contentPane.add(btnEliminarCategoria);
-		
 		JButton btnEditarProducto = new JButton("Editar Categoria Producto");
-		btnEditarProducto.setBounds(10, 360, 218, 62);
+		btnEditarProducto.setBounds(10, 288, 218, 62);
 		contentPane.add(btnEditarProducto);
 		
-		JButton btnAgregarUsuario = new JButton("Agregar Usuario");
-		btnAgregarUsuario.setBounds(536, 216, 218, 62);
-		contentPane.add(btnAgregarUsuario);
-		
-		JButton btnEliminarUsuario = new JButton("Eliminar Usuario");
-		btnEliminarUsuario.setBounds(536, 288, 216, 62);
+		JButton btnEliminarUsuario = new JButton("Manejar Usuarios");
+		btnEliminarUsuario.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				UsersAdmin UA = new UsersAdmin(connect);
+				UA.setVisible(true);
+				AdminScreen.this.dispose();
+			}
+		});
+		btnEliminarUsuario.setBounds(536, 216, 216, 62);
 		contentPane.add(btnEliminarUsuario);
-		
-		JButton btnEditarUsuario = new JButton("Editar Usuario");
-		btnEditarUsuario.setBounds(536, 360, 216, 62);
-		contentPane.add(btnEditarUsuario);
 		
 		JLabel lblNewLabel_3 = new JLabel("ADMIN");
 		lblNewLabel_3.setFont(new Font("Tahoma", Font.PLAIN, 45));
