@@ -1,12 +1,8 @@
 package FramesVC;
 
-import Dominio.*;
-
-
 import javax.swing.JOptionPane;
 import static Logica.App.*;
 import java.sql.*;
-import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -163,17 +159,10 @@ public class Login extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null,"Usuario Bloqueado");
             }
             else{
-                JOptionPane.showMessageDialog(null,"Encontrado");
-                JOptionPane.showMessageDialog(null,l.get(0));
-                Perfil perfil;
-                try {
-                    perfil = new Perfil();
-                    perfil.setLocationRelativeTo(null);
-                    perfil.setVisible(true);
-                } catch (SQLException ex) {
-                    Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
-                }
-                
+                JOptionPane.showMessageDialog(null,"Encontrado");      
+                Perfil perfil = new Perfil();
+                perfil.setLocationRelativeTo(null);
+                perfil.setVisible(true);
                 this.setVisible(false);
             }		
                     
@@ -188,6 +177,7 @@ public class Login extends javax.swing.JFrame {
         Registrar registrar = new Registrar();
         registrar.setLocationRelativeTo(null);
         registrar.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_jLabel3MouseClicked
 
     /**

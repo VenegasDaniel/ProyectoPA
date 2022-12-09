@@ -4,11 +4,9 @@
  */
 package FramesVC;
 
-import Dominio.Usuario;
+
 import Logica.App;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectOutputStream;
+import static Logica.App.objetoConection;
 import javax.swing.JOptionPane;
 
 /**
@@ -41,17 +39,17 @@ public class Registrar extends javax.swing.JFrame {
         correoE = new javax.swing.JLabel();
         mail = new javax.swing.JTextField();
         contactoE = new javax.swing.JLabel();
-        contacto = new javax.swing.JTextField();
+        contact = new javax.swing.JTextField();
         rutE = new javax.swing.JLabel();
         rut = new javax.swing.JTextField();
         passwordE = new javax.swing.JLabel();
         password = new javax.swing.JTextField();
         ciudadE = new javax.swing.JLabel();
-        ciudad = new javax.swing.JTextField();
+        city = new javax.swing.JTextField();
         comunaE = new javax.swing.JLabel();
-        comuna = new javax.swing.JTextField();
+        commune = new javax.swing.JTextField();
         direccionE = new javax.swing.JLabel();
-        direccion = new javax.swing.JTextField();
+        direciont = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
 
@@ -84,9 +82,9 @@ public class Registrar extends javax.swing.JFrame {
 
         contactoE.setText("Contacto");
 
-        contacto.addActionListener(new java.awt.event.ActionListener() {
+        contact.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                contactoActionPerformed(evt);
+                contactActionPerformed(evt);
             }
         });
 
@@ -108,25 +106,25 @@ public class Registrar extends javax.swing.JFrame {
 
         ciudadE.setText("Ciudad");
 
-        ciudad.addActionListener(new java.awt.event.ActionListener() {
+        city.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ciudadActionPerformed(evt);
+                cityActionPerformed(evt);
             }
         });
 
         comunaE.setText("Comuna");
 
-        comuna.addActionListener(new java.awt.event.ActionListener() {
+        commune.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                comunaActionPerformed(evt);
+                communeActionPerformed(evt);
             }
         });
 
         direccionE.setText("Direccion");
 
-        direccion.addActionListener(new java.awt.event.ActionListener() {
+        direciont.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                direccionActionPerformed(evt);
+                direciontActionPerformed(evt);
             }
         });
 
@@ -161,12 +159,12 @@ public class Registrar extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(contacto, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(contact, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(rut, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(ciudad, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(comuna, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(direccion, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(city, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(commune, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(direciont, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(name, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(lastName, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -211,17 +209,17 @@ public class Registrar extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(mail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(contacto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(contact, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(rut, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(ciudad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(city, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(comuna, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(commune, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(direccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(direciont, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addComponent(jButton1)
                 .addContainerGap(48, Short.MAX_VALUE))
@@ -233,21 +231,30 @@ public class Registrar extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         String nameE = name.getText();
         String lastnameE = lastName.getText();
-        String correo = mail.getText();
-        int contactoE = Integer.parseInt(contacto.getText());
+        String mailE = mail.getText();
+        String contactE = contact.getText();
         String rutE = rut.getText();
         String passE = password.getText();
-        String ciudadE = ciudad.getText();
-        String comunaE = comuna.getText();
-        String direccionE = direccion.getText();
+        String cityE = city.getText();
+        String communeE = commune.getText();
+        String directionE = direciont.getText();
         
         if (name.getText().isEmpty() || lastName.getText().isEmpty() || mail.getText().isEmpty()
-                || contacto.getText().isEmpty() || rut.getText().isEmpty() || password.getText().isEmpty() 
-                || ciudad.getText().isEmpty() || comuna.getText().isEmpty() || direccion.getText().isEmpty()) {
+                || contact.getText().isEmpty() || rut.getText().isEmpty() || password.getText().isEmpty() 
+                || city.getText().isEmpty() || commune.getText().isEmpty() || direciont.getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Porfavor rellenar todo");
             
-        } 
-               
+        }
+        
+        
+        
+        objetoConection.insertPerson(rutE, nameE, lastnameE, mailE, contactE, passE, cityE, communeE, directionE);
+        
+        JOptionPane.showMessageDialog(null,"Encontrado");      
+        Login login = new Login();
+        login.setLocationRelativeTo(null);
+        login.setVisible(true);
+        this.setVisible(false);      
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void nameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameActionPerformed
@@ -270,21 +277,21 @@ public class Registrar extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_passwordActionPerformed
 
-    private void contactoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contactoActionPerformed
+    private void contactActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contactActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_contactoActionPerformed
+    }//GEN-LAST:event_contactActionPerformed
 
-    private void comunaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comunaActionPerformed
+    private void communeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_communeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_comunaActionPerformed
+    }//GEN-LAST:event_communeActionPerformed
 
-    private void direccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_direccionActionPerformed
+    private void direciontActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_direciontActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_direccionActionPerformed
+    }//GEN-LAST:event_direciontActionPerformed
 
-    private void ciudadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ciudadActionPerformed
+    private void cityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cityActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_ciudadActionPerformed
+    }//GEN-LAST:event_cityActionPerformed
 
     /**
      * @param args the command line arguments
@@ -319,15 +326,15 @@ public class Registrar extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField ciudad;
+    private javax.swing.JTextField city;
     private javax.swing.JLabel ciudadE;
-    private javax.swing.JTextField comuna;
+    private javax.swing.JTextField commune;
     private javax.swing.JLabel comunaE;
-    private javax.swing.JTextField contacto;
+    private javax.swing.JTextField contact;
     private javax.swing.JLabel contactoE;
     private javax.swing.JLabel correoE;
-    private javax.swing.JTextField direccion;
     private javax.swing.JLabel direccionE;
+    private javax.swing.JTextField direciont;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JTextField lastName;

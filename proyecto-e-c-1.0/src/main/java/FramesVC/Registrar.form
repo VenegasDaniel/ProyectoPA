@@ -42,12 +42,12 @@
                       <EmptySpace pref="38" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Group type="103" alignment="1" groupAlignment="0" attributes="0">
-                              <Component id="contacto" alignment="0" min="-2" pref="140" max="-2" attributes="0"/>
+                              <Component id="contact" alignment="0" min="-2" pref="140" max="-2" attributes="0"/>
                               <Component id="rut" alignment="0" min="-2" pref="140" max="-2" attributes="0"/>
                               <Component id="password" alignment="0" min="-2" pref="140" max="-2" attributes="0"/>
-                              <Component id="ciudad" alignment="0" min="-2" pref="140" max="-2" attributes="0"/>
-                              <Component id="comuna" alignment="0" min="-2" pref="140" max="-2" attributes="0"/>
-                              <Component id="direccion" alignment="0" min="-2" pref="140" max="-2" attributes="0"/>
+                              <Component id="city" alignment="0" min="-2" pref="140" max="-2" attributes="0"/>
+                              <Component id="commune" alignment="0" min="-2" pref="140" max="-2" attributes="0"/>
+                              <Component id="direciont" alignment="0" min="-2" pref="140" max="-2" attributes="0"/>
                           </Group>
                           <Group type="103" alignment="1" groupAlignment="0" attributes="0">
                               <Component id="name" alignment="0" min="-2" pref="140" max="-2" attributes="0"/>
@@ -102,17 +102,17 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="mail" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="contacto" min="-2" max="-2" attributes="0"/>
+                      <Component id="contact" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="rut" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="password" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="ciudad" min="-2" max="-2" attributes="0"/>
+                      <Component id="city" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="comuna" min="-2" max="-2" attributes="0"/>
+                      <Component id="commune" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="direccion" min="-2" max="-2" attributes="0"/>
+                      <Component id="direciont" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -158,9 +158,9 @@
         <Property name="text" type="java.lang.String" value="Contacto"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="contacto">
+    <Component class="javax.swing.JTextField" name="contact">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="contactoActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="contactActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="rutE">
@@ -188,9 +188,9 @@
         <Property name="text" type="java.lang.String" value="Ciudad"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="ciudad">
+    <Component class="javax.swing.JTextField" name="city">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ciudadActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cityActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="comunaE">
@@ -198,9 +198,9 @@
         <Property name="text" type="java.lang.String" value="Comuna"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="comuna">
+    <Component class="javax.swing.JTextField" name="commune">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="comunaActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="communeActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="direccionE">
@@ -208,9 +208,9 @@
         <Property name="text" type="java.lang.String" value="Direccion"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="direccion">
+    <Component class="javax.swing.JTextField" name="direciont">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="direccionActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="direciontActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel3">

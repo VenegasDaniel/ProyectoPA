@@ -22,10 +22,14 @@ public class Perfil extends javax.swing.JFrame {
     /**
      * Creates new form VentasCoquimbo_Perfil
      */
-    public Perfil() throws SQLException {
+    public Perfil() {
         initComponents();
         
-        objetoConection.getProducts(jTable1);
+        try {
+            objetoConection.getProducts(jTable1);
+        } catch (SQLException ex) {
+            Logger.getLogger(Perfil.class.getName()).log(Level.SEVERE, null, ex);
+        }
         
     }
 
@@ -236,11 +240,7 @@ public class Perfil extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                try {
-                    new Perfil().setVisible(true);
-                } catch (SQLException ex) {
-                    Logger.getLogger(Perfil.class.getName()).log(Level.SEVERE, null, ex);
-                }
+                new Perfil().setVisible(true);
             }
         });
     }

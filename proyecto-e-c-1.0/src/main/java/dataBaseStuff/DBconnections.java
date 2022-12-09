@@ -97,12 +97,37 @@ public class DBconnections {
         }				
     }
     
-    public void insertPerson(){
+    public void insertPerson(String rut, String name, String lastname, String mail, 
+            String phone, String password, String city, String commune, String direction){  
         
         
         
+        String consulta = "insert into person "
+                + "(rut,namePerson,lastName,mail,phone,passwordPerson,city,commune,direction,image,statePerson) values "
+                + "(?,?,?,?,?,?,?,?,?,?,'false');";
         
-    }
-    
-    
+        try {
+            
+            CallableStatement cs = connection.prepareCall(consulta);
+            cs.setString(1, rut);
+            cs.setString(2, name);
+            cs.setString(3, lastname);
+            cs.setString(4, mail);
+            cs.setString(5, phone);
+            cs.setString(6, password);
+            cs.setString(7, city);
+            cs.setString(8, commune);
+            cs.setString(9, direction);
+            cs.setString(10, null);
+            
+            cs.execute();
+            
+            JOptionPane.showMessageDialog(null,"Se insertó correctamente");
+            
+            
+        } catch (Exception e) {
+             JOptionPane.showMessageDialog(null,"Error:"+ e.toString());
+        }
+        
+    }       
 }
