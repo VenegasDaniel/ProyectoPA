@@ -54,6 +54,7 @@ public class AdminScreen extends JFrame {
 		contentPane.setLayout(null);
 		
 		JButton btnNewButton = new JButton("Manejar Productos");
+		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				ProductsAdmin pa = new ProductsAdmin(connect);
@@ -87,19 +88,20 @@ public class AdminScreen extends JFrame {
 		lblNewLabel_2.setBounds(594, 162, 98, 21);
 		contentPane.add(lblNewLabel_2);
 		
-		JButton btnAgregarCategoria = new JButton("Agregar Categoria");
+		JButton btnAgregarCategoria = new JButton("Manejar Categorias");
+		btnAgregarCategoria.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		btnAgregarCategoria.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				CategoryAdmin ca = new CategoryAdmin(connect);
+				ca.setVisible(true);
+				AdminScreen.this.dispose();
 			}
 		});
 		btnAgregarCategoria.setBounds(10, 216, 218, 62);
 		contentPane.add(btnAgregarCategoria);
 		
-		JButton btnEditarProducto = new JButton("Editar Categoria Producto");
-		btnEditarProducto.setBounds(10, 288, 218, 62);
-		contentPane.add(btnEditarProducto);
-		
 		JButton btnEliminarUsuario = new JButton("Manejar Usuarios");
+		btnEliminarUsuario.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		btnEliminarUsuario.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				UsersAdmin ua = new UsersAdmin(connect);

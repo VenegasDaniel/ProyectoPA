@@ -187,6 +187,16 @@ public class ConnectionDB {
 		return null;	
     }
     
+    public String getNameCategory(String query) throws SQLException{
+    	PreparedStatement  statement = connection.prepareStatement(query);
+    	ResultSet result = statement.executeQuery();
+    	while(result.next()) {
+    		String nameProduct = result.getString("category");
+    		 return nameProduct;
+        }
+		return null;	
+    }
+    
     public int getPriceProduct(String query) throws SQLException{
     	PreparedStatement  statement = connection.prepareStatement(query);
     	ResultSet result = statement.executeQuery();

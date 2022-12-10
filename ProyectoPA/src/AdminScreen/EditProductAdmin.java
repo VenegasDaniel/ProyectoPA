@@ -12,16 +12,25 @@ import ConnectionDataBase.ConnectionDB;
 import Dominio.Product;
 
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.Font;
+import java.awt.Image;
 import java.util.ArrayList;
 
 import javax.swing.JTextField;
+import javax.swing.SwingConstants;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JFileChooser;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
 
 public class EditProductAdmin extends JFrame {
 
@@ -122,7 +131,7 @@ public class EditProductAdmin extends JFrame {
 				blockData();
 				String query;
 				//update 
-				query = String.format("update person set nameProduct = '%s', category = '%s', description = '%s', price = %s, stock = %s where nameProduct = '%s'",
+				query = String.format("update product set nameProduct = '%s', category = '%s', description = '%s', price = %s, stock = %s where nameProduct = '%s'",
 						enterName.getText(),enterCategory.getText(),enterDescription.getText(),Integer.parseInt(enterPrice.getText()),
 						Integer.parseInt(enterStock.getText()),p.getNameProduct());
 				try {
@@ -166,6 +175,86 @@ public class EditProductAdmin extends JFrame {
 		exitButton.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		exitButton.setBounds(477, 21, 103, 41);
 		contentPane.add(exitButton);
+		
+		JLabel ImageLabel = new JLabel("");
+		ImageLabel.setBounds(282, 100, 379, 321);
+		ImageLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		contentPane.add(ImageLabel);
+						
+		if(p.getImage() != null) {
+			Image imagen = new ImageIcon(p.getImage()).getImage();
+			ImageIcon iImagen = new ImageIcon(imagen.getScaledInstance(ImageLabel.getWidth(), ImageLabel.getHeight(), Image.SCALE_SMOOTH));
+			ImageLabel.setIcon(iImagen);
+		}
+		
+		JButton uploadPhotoButton = new JButton("Subir Foto");
+		uploadPhotoButton.setBounds(395, 431, 201, 59);
+		uploadPhotoButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				/*
+				String imagePath = "";
+				JFileChooser jf = new JFileChooser();
+				FileNameExtensionFilter filterSearch = new FileNameExtensionFilter("JGP, PNG & GIF","jgp","png","gif");
+				jf.setFileFilter(filterSearch);
+				int respuesta = jf.showOpenDialog(uploadPhotoButton);
+				
+				if(respuesta == JFileChooser.APPROVE_OPTION) {
+					System.out.println(jf.getSelectedFile().getName());
+					imagePath = jf.getSelectedFile().getPath();
+					if(p.getImage() == null || !p.getImage().equals(imagePath)) {
+						Image imagen = new ImageIcon(imagePath).getImage();
+						ImageIcon iImagen = new ImageIcon(imagen.getScaledInstance(ImageLabel.getWidth(), ImageLabel.getHeight(), Image.SCALE_SMOOTH));
+						ImageLabel.setIcon(iImagen);
+						p.setImage(imagePath);
+						String query = String.format("update person set image = '%s' where rut = '%s' ",p.getImage(),p.getRut());
+						try {
+							connect.UpdateData(query);
+						} catch (Exception e1) {
+							// TODO Auto-generated catch block
+							e1.printStackTrace();
+						}
+					}
+					
+				}
+				*/
+				JFileChooser jf = new JFileChooser();
+				jf.showOpenDialog(null);
+				File f = jf.getSelectedFile();
+				String filename = f.getAbsolutePath();
+				String name = jf.getSelectedFile().getName();
+				String newPath = "Media/Producto/";
+				File directory = new File(newPath);
+				if(!directory.exists()) {
+					directory.mkdir();
+				}
+				File sourceFile = null;
+				File destinationFile = null;
+				sourceFile = new File(filename);
+				destinationFile = new File(newPath+name);
+				try {
+					Files.copy(sourceFile.toPath(),destinationFile.toPath());
+					Image imagen = new ImageIcon(filename).getImage();
+					ImageIcon iImagen = new ImageIcon(imagen.getScaledInstance(ImageLabel.getWidth(), ImageLabel.getHeight(), Image.SCALE_SMOOTH));
+					ImageLabel.setIcon(iImagen);
+					p.setImage(destinationFile.getAbsolutePath());
+					String query = String.format("update product set image = '%s' where rut = '%s' ",p.getImage(),p.getNameProduct());
+					try {
+						connect.UpdateData(query);
+					} catch (Exception e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+					
+				} catch (IOException e1) {
+					JOptionPane.showMessageDialog(null,"Imagen ya existente con ese nombre,porfavor cambielo");
+					
+				}
+				
+			}
+			
+		});
+		contentPane.add(uploadPhotoButton);
+		
 	}
 	
 	
@@ -192,5 +281,5 @@ public class EditProductAdmin extends JFrame {
 		enterPrice.setEnabled(true);
 		enterStock.setEnabled(true);	
 		
-	}
+	}	
 }

@@ -135,10 +135,38 @@ public class ProductsAdmin extends JFrame {
 		buttonEditProduct.setBounds(681, 94, 157, 45);
 		contentPane.add(buttonEditProduct);
 		
-		JButton btnNewButton_1 = new JButton("Eliminar");
-		btnNewButton_1.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		btnNewButton_1.setBounds(681, 168, 157, 45);
-		contentPane.add(btnNewButton_1);
+		JButton buttonDelete = new JButton("Eliminar");
+		buttonDelete.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				int row = table.getSelectedRow();
+                if(row >= 0) {
+                    String nameProduct = (String) table.getValueAt(row, 0);
+                    try {
+                    	String query = String.format("delete from shoppingCart where nameProduct= '%s'",nameProduct);
+                        connect.DeleteData(query);
+                        query = String.format("delete from reviews where nameProduct= '%s'",nameProduct);
+                        connect.DeleteData(query);
+                        query = String.format("delete from purchasePersonProduct where nameProduct= '%s'",nameProduct);
+                        connect.DeleteData(query);
+                        query = String.format("delete from product where nameProduct= '%s'",nameProduct);
+                        connect.DeleteData(query);
+                        ProductsAdmin.this.dispose();
+                        JOptionPane.showMessageDialog(null,"Producto Eliminado,Se refrescara la pestañana");
+                        ProductsAdmin pa = new ProductsAdmin(connect);
+                        pa.setVisible(true);
+                    } catch (Exception e1) {
+                        // TODO Auto-generated catch block
+                        e1.printStackTrace();
+                    }
+                }
+                else {
+                    JOptionPane.showMessageDialog(null,"Debe seleccionar la casilla que desea ver");
+                }
+			}
+		});
+		buttonDelete.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		buttonDelete.setBounds(681, 168, 157, 45);
+		contentPane.add(buttonDelete);
 		
 		JButton buttonAddProduct = new JButton("Añadir Producto");
 		buttonAddProduct.setFont(new Font("Tahoma", Font.PLAIN, 15));
@@ -161,7 +189,7 @@ public class ProductsAdmin extends JFrame {
 			}
 		});
 		exitButton.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		exitButton.setBounds(477, 30, 103, 41);
+		exitButton.setBounds(735, 23, 103, 41);
 		contentPane.add(exitButton);
 		
 	}

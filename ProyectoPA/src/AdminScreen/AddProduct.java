@@ -124,29 +124,22 @@ public class AddProduct extends JFrame {
 					String nameProduct = enterName.getText();
 					String query =  String.format("select * from product where nameProduct = '%s'", nameProduct);
 					try {
-						nameProduct = connect.getRut(query);
-						if(nameProduct == null) {
-							
-							
-								String mail = connect.findEmail(query);
-								if(mail != null) {
-									JOptionPane.showMessageDialog(null,"El email ingresado ya existe");
-								}
-								else {
-									query = String.format("insert into product values('%s','%s','%s',%s,%s,'%s')",enterName.getText(),enterCategory.getText(),
-											enterDescription.getText(),Integer.parseInt(enterPrice.getText()) ,Integer.parseInt(enterStock.getText()),false);
+						nameProduct = connect.getNameProduct(query);
+						if(nameProduct == null) {																		
+							query = String.format("insert into product values('%s','%s','%s',%s,%s,'%s')",enterName.getText(),enterCategory.getText(),
+									enterDescription.getText(),Integer.parseInt(enterPrice.getText()) ,Integer.parseInt(enterStock.getText()),false);
 									
-									try {
-										connect.insertData(query);
-									} catch (Exception e1) {
+							try {
+								connect.insertData(query);
+							} catch (Exception e1) {
 										// TODO Auto-generated catch block
-										e1.printStackTrace();
-									}
-									JOptionPane.showMessageDialog(null,"Añadido Correctamente");
-									ProductsAdmin pa = new ProductsAdmin(connect);
-									pa.setVisible(true);
-									AddProduct.this.dispose();
-								}							
+								e1.printStackTrace();
+							}
+							JOptionPane.showMessageDialog(null,"Añadido Correctamente");
+							ProductsAdmin pa = new ProductsAdmin(connect);
+							pa.setVisible(true);
+							AddProduct.this.dispose();
+															
 						}
 						else {
 							JOptionPane.showMessageDialog(null,"Producto ya existente");
