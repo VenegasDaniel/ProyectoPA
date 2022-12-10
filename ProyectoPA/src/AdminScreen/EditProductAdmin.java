@@ -33,8 +33,6 @@ public class EditProductAdmin extends JFrame {
 	private JTextField enterPrice;
 	private JTextField enterStock;
 	public static Product p;
-	private JButton btnNewButton;
-	private JButton btnNewButton_1;
 	/**
 	 * Launch the application.
 	 */
@@ -121,7 +119,21 @@ public class EditProductAdmin extends JFrame {
 		buttonFinishEdit.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		buttonFinishEdit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-			
+				blockData();
+				String query;
+				//update 
+				query = String.format("update person set nameProduct = '%s', category = '%s', description = '%s', price = %s, stock = %s where nameProduct = '%s'",
+						enterName.getText(),enterCategory.getText(),enterDescription.getText(),Integer.parseInt(enterPrice.getText()),
+						Integer.parseInt(enterStock.getText()),p.getNameProduct());
+				try {
+					connect.UpdateData(query);
+					
+				} catch (Exception e2) {
+					e2.printStackTrace();
+				}
+				ProductsAdmin pa = new ProductsAdmin(connect);
+				pa.setVisible(true);
+				EditProductAdmin.this.dispose();	
 			}	
 		});
 		buttonFinishEdit.setBounds(326, 346, 195, 37);
@@ -143,6 +155,8 @@ public class EditProductAdmin extends JFrame {
 		lblNewLabel_1.setBounds(157, 21, 276, 37);
 		contentPane.add(lblNewLabel_1);
 	}
+	
+	
 	private void blockData() {
 		enterName.setEnabled(false);
 		enterCategory.setEnabled(false);

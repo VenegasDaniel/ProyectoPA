@@ -9,11 +9,8 @@ import javax.swing.JTable;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 
-import ClientScreen.ClientScreen;
-import ClientScreen.ShowProduct;
+
 import ConnectionDataBase.ConnectionDB;
-import Dominio.Factory;
-import Dominio.Person;
 import Dominio.Product;
 
 import javax.swing.JLabel;
@@ -109,8 +106,8 @@ public class ProductsAdmin extends JFrame {
 		lblStock.setBounds(447, 77, 142, 25);
 		contentPane.add(lblStock);
 		
-		JButton btnNewButton = new JButton("Editar producto");
-		btnNewButton.addActionListener(new ActionListener() {
+		JButton buttonEditProduct = new JButton("Editar producto");
+		buttonEditProduct.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				int row = table.getSelectedRow();
 				if(row >= 0) {
@@ -134,25 +131,22 @@ public class ProductsAdmin extends JFrame {
 				}
 			}
 		});
-		btnNewButton.setBounds(717, 94, 121, 45);
-		contentPane.add(btnNewButton);
+		buttonEditProduct.setBounds(717, 94, 121, 45);
+		contentPane.add(buttonEditProduct);
 		
 		JButton btnNewButton_1 = new JButton("New button");
 		btnNewButton_1.setBounds(717, 168, 121, 45);
 		contentPane.add(btnNewButton_1);
 		
-		JButton btnNewButton_2 = new JButton("New button");
-		btnNewButton_2.setBounds(717, 244, 121, 45);
-		contentPane.add(btnNewButton_2);
+		JButton buttonAddProduct = new JButton("Añadir Producto");
+		buttonAddProduct.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+			}
+		});
+		buttonAddProduct.setBounds(717, 244, 121, 45);
+		contentPane.add(buttonAddProduct);
 	}
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	
 	
