@@ -107,6 +107,7 @@ public class ProductsAdmin extends JFrame {
 		contentPane.add(lblStock);
 		
 		JButton buttonEditProduct = new JButton("Editar producto");
+		buttonEditProduct.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		buttonEditProduct.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				int row = table.getSelectedRow();
@@ -131,21 +132,38 @@ public class ProductsAdmin extends JFrame {
 				}
 			}
 		});
-		buttonEditProduct.setBounds(717, 94, 121, 45);
+		buttonEditProduct.setBounds(681, 94, 157, 45);
 		contentPane.add(buttonEditProduct);
 		
-		JButton btnNewButton_1 = new JButton("New button");
-		btnNewButton_1.setBounds(717, 168, 121, 45);
+		JButton btnNewButton_1 = new JButton("Eliminar");
+		btnNewButton_1.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		btnNewButton_1.setBounds(681, 168, 157, 45);
 		contentPane.add(btnNewButton_1);
 		
 		JButton buttonAddProduct = new JButton("Añadir Producto");
+		buttonAddProduct.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		buttonAddProduct.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+				AddProduct pa = new AddProduct(connect);
+				pa.setVisible(true);
+				ProductsAdmin.this.dispose();
 			}
 		});
-		buttonAddProduct.setBounds(717, 244, 121, 45);
+		buttonAddProduct.setBounds(681, 244, 157, 45);
 		contentPane.add(buttonAddProduct);
+		
+		JButton exitButton = new JButton("Salir");
+		exitButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				UsersAdmin ua = new UsersAdmin(connect);
+				ua.setVisible(true);
+				ProductsAdmin.this.dispose();
+			}
+		});
+		exitButton.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		exitButton.setBounds(477, 30, 103, 41);
+		contentPane.add(exitButton);
+		
 	}
 	
 	

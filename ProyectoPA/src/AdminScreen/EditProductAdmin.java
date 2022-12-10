@@ -61,50 +61,50 @@ public class EditProductAdmin extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblNombre = new JLabel("Nombre");
-		lblNombre.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblNombre.setBounds(63, 78, 85, 37);
-		contentPane.add(lblNombre);
+		JLabel lblName = new JLabel("Nombre");
+		lblName.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblName.setBounds(63, 78, 85, 37);
+		contentPane.add(lblName);
 		
 		enterName = new JTextField();
 		enterName.setColumns(10);
 		enterName.setBounds(175, 85, 346, 32);
 		contentPane.add(enterName);
 		
-		JLabel lblNombre_1 = new JLabel("Categoria");
-		lblNombre_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblNombre_1.setBounds(63, 125, 85, 37);
-		contentPane.add(lblNombre_1);
+		JLabel lblCategory = new JLabel("Categoria");
+		lblCategory.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblCategory.setBounds(63, 125, 85, 37);
+		contentPane.add(lblCategory);
 		
 		enterCategory = new JTextField();
 		enterCategory.setColumns(10);
 		enterCategory.setBounds(175, 132, 346, 32);
 		contentPane.add(enterCategory);
 		
-		JLabel lblNombre_2 = new JLabel("Descripcion");
-		lblNombre_2.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblNombre_2.setBounds(63, 172, 85, 37);
-		contentPane.add(lblNombre_2);
+		JLabel lblDescription = new JLabel("Descripcion");
+		lblDescription.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblDescription.setBounds(63, 172, 85, 37);
+		contentPane.add(lblDescription);
 		
 		enterDescription = new JTextField();
 		enterDescription.setColumns(10);
 		enterDescription.setBounds(175, 179, 346, 32);
 		contentPane.add(enterDescription);
 		
-		JLabel lblNombre_3 = new JLabel("Precio");
-		lblNombre_3.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblNombre_3.setBounds(63, 219, 85, 37);
-		contentPane.add(lblNombre_3);
+		JLabel lblPrice = new JLabel("Precio");
+		lblPrice.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblPrice.setBounds(63, 219, 85, 37);
+		contentPane.add(lblPrice);
 		
 		enterPrice = new JTextField();
 		enterPrice.setColumns(10);
 		enterPrice.setBounds(175, 226, 346, 32);
 		contentPane.add(enterPrice);
 		
-		JLabel lblNombre_4 = new JLabel("Stock");
-		lblNombre_4.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblNombre_4.setBounds(63, 266, 85, 37);
-		contentPane.add(lblNombre_4);
+		JLabel lblStock = new JLabel("Stock");
+		lblStock.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblStock.setBounds(63, 266, 85, 37);
+		contentPane.add(lblStock);
 		
 		enterStock = new JTextField();
 		enterStock.setColumns(10);
@@ -154,6 +154,18 @@ public class EditProductAdmin extends JFrame {
 		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 35));
 		lblNewLabel_1.setBounds(157, 21, 276, 37);
 		contentPane.add(lblNewLabel_1);
+		
+		JButton exitButton = new JButton("Salir");
+		exitButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				ProductsAdmin pa = new ProductsAdmin(connect);
+				pa.setVisible(true);
+				EditProductAdmin.this.dispose();
+			}
+		});
+		exitButton.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		exitButton.setBounds(477, 21, 103, 41);
+		contentPane.add(exitButton);
 	}
 	
 	
