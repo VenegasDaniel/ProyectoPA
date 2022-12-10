@@ -63,7 +63,7 @@ public class EditProductAdmin extends JFrame {
 	 */
 	public EditProductAdmin(ConnectionDB connect,Product p) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 604, 486);
+		setBounds(100, 100, 800, 486);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
@@ -177,7 +177,7 @@ public class EditProductAdmin extends JFrame {
 		contentPane.add(exitButton);
 		
 		JLabel ImageLabel = new JLabel("");
-		ImageLabel.setBounds(282, 100, 379, 321);
+		ImageLabel.setBounds(547, 85, 239, 182);
 		ImageLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		contentPane.add(ImageLabel);
 						
@@ -188,7 +188,8 @@ public class EditProductAdmin extends JFrame {
 		}
 		
 		JButton uploadPhotoButton = new JButton("Subir Foto");
-		uploadPhotoButton.setBounds(395, 431, 201, 59);
+		uploadPhotoButton.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		uploadPhotoButton.setBounds(559, 348, 201, 35);
 		uploadPhotoButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				/*
