@@ -12,6 +12,10 @@ import javax.swing.table.DefaultTableModel;
 import ClientScreen.ClientScreen;
 import ClientScreen.ShowProduct;
 import ConnectionDataBase.ConnectionDB;
+import Dominio.Factory;
+import Dominio.Person;
+import Dominio.Product;
+
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
@@ -112,11 +116,12 @@ public class ProductsAdmin extends JFrame {
 				if(row >= 0) {
 					String nameProduct = (String) table.getValueAt(row, 0);
 					String query = String.format("select * from product where nameProduct= '%s'",nameProduct);
-					String imagePath;
+					ArrayList<String> l;
 					try {
-						imagePath = connect.findImageProduct(query);
-						ShowProduct sp = new ShowProduct(connect,imagePath);
-						sp.setVisible(true);
+						l = connect.findProductAll(query);
+						Product p = new Product(l.get(0),l.get(1),l.get(2),Integer.parseInt(l.get(3)),Integer.parseInt(l.get(4)),l.get(5));						
+						EditProductAdmin eda = new EditProductAdmin(connect,p);
+						eda.setVisible(true);
 						ProductsAdmin.this.dispose();
 						
 					} catch (SQLException e2) {

@@ -56,8 +56,8 @@ public class AdminScreen extends JFrame {
 		JButton btnNewButton = new JButton("Manejar Productos");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				ProductsAdmin PA = new ProductsAdmin(connect);
-				PA.setVisible(true);
+				ProductsAdmin pa = new ProductsAdmin(connect);
+				pa.setVisible(true);
 				AdminScreen.this.dispose();
 			}
 		});
@@ -102,8 +102,8 @@ public class AdminScreen extends JFrame {
 		JButton btnEliminarUsuario = new JButton("Manejar Usuarios");
 		btnEliminarUsuario.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				UsersAdmin UA = new UsersAdmin(connect);
-				UA.setVisible(true);
+				UsersAdmin ua = new UsersAdmin(connect);
+				ua.setVisible(true);
 				AdminScreen.this.dispose();
 			}
 		});

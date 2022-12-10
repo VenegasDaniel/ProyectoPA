@@ -151,6 +151,21 @@ public class ConnectionDB {
         return array;
     }
     
+    public ArrayList<String> findProductAll(String query) throws SQLException{
+    	ArrayList<String> array = new ArrayList<>();
+    	PreparedStatement  statement = connection.prepareStatement(query);
+    	ResultSet result = statement.executeQuery();
+    	while(result.next()) {
+        	array.add(result.getString("nameProduct"));
+        	array.add(result.getString("category"));
+        	array.add(result.getString("description"));
+        	array.add(String.valueOf(result.getString("price")));
+        	array.add(String.valueOf(result.getString("stock")));	
+        }
+        return array;
+    }
+    
+    
     
     public String getDescriptionProduct(String query) throws SQLException{
     	PreparedStatement  statement = connection.prepareStatement(query);
