@@ -190,11 +190,13 @@ public class AddProduct extends JFrame {
 					JOptionPane.showMessageDialog(null,"Campo Vacio en stock porfavor Completar");
 				}
 				else {
-					String query = String.format("select * from categoryProduct where category = '%s'",enterCategory.getText());
+					String categoryAux = enterCategory.getText();
+					categoryAux = categoryAux.toLowerCase();
+					String query = String.format("select * from categoryProduct where category = '%s'",categoryAux);
 					try {
 						String category = connect.getCategory(query);
 						if(category != null) {
-							query = String.format("insert into product values('%s','%s','%s',%s,%s,'%s')",nameProduct,enterCategory.getText(),
+							query = String.format("insert into product values('%s','%s','%s',%s,%s,'%s')",nameProduct,categoryAux,
 									enterDescription.getText(),Integer.parseInt(enterPrice.getText()),Integer.parseInt(enterStock.getText()),path);
 							try {
 								connect.insertData(query);
