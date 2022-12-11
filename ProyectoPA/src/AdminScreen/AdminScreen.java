@@ -47,7 +47,7 @@ public class AdminScreen extends JFrame {
 	public AdminScreen(ConnectionDB connect) {
 		setTitle("Pantalla Administrador");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 791, 399);
+		setBounds(100, 100, 791, 364);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -117,6 +117,19 @@ public class AdminScreen extends JFrame {
 		lblNewLabel_3.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_3.setBounds(267, 16, 248, 132);
 		contentPane.add(lblNewLabel_3);
+		
+		JButton btnSalir = new JButton("Salir");
+		btnSalir.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Login l = new Login(connect);
+				l.setVisible(true);
+				AdminScreen.this.dispose();
+			}
+		});
+		btnSalir.setFont(new Font("Tahoma", Font.PLAIN, 30));
+		btnSalir.setBounds(616, 43, 119, 34);
+		contentPane.add(btnSalir);
 	}
+	
 
 }
