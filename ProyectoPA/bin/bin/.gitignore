@@ -1,6 +1,7 @@
 /AdminScreen/
-/GUI/
-/ConnectionDataBase/
 /ClientScreen/
+/ConnectionDataBase/
 /Dominio/
+/GUI/
 /Logica/
+/module-info.class
