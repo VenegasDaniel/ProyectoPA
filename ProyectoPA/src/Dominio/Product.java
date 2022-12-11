@@ -1,6 +1,5 @@
 package Dominio;
 
-import java.util.LinkedList;
 
 public class Product {
 
@@ -9,15 +8,15 @@ public class Product {
 	private String description;
 	private int price;
 	private int stock;
-	private LinkedList<String> reviews;
+	private String image;
 	
-	public Product(String nameProduct, String category, String description, int price, int stock) {
+	public Product(String nameProduct, String category, String description, int price, int stock, String image) {
 		this.nameProduct = nameProduct;
 		this.category = category;
 		this.description = description;
 		this.price = price;
 		this.stock = stock;
-		this.reviews = new LinkedList<>();
+		this.image = image;
 	}
 
 	public String getNameProduct() {
@@ -60,13 +59,17 @@ public class Product {
 		this.stock = stock;
 	}
 
-	public LinkedList<String> getReviews() {
-		return reviews;
+	public String getImage() {
+		return image;
 	}
 
-	public void setReviews(LinkedList<String> reviews) {
-		this.reviews = reviews;
+	public void setImage(String image) {
+		this.image = image;
 	}
+
+	
+	
+	
 	
 	
 	
