@@ -106,8 +106,10 @@ public class SignIn extends JFrame {
 				}
 				else {
 					String rut = enterRut.getText();
-					rut = validateRut(rut);
+					
+					rut= validateRut(rut);
 					if(rut != null) {
+						String rut1 = rut;
 						String query =  String.format("select * from person where rut = '%s'", rut);
 						try {
 							rut = connect.getRut(query);
@@ -119,7 +121,7 @@ public class SignIn extends JFrame {
 										JOptionPane.showMessageDialog(null,"El email ingresado ya existe");
 									}
 									else {
-										query = String.format("insert into person values('%s','%s','%s','%s','%s',%s,'%s',%s,'%s')",enterRut.getText(),enterName.getText(),
+										query = String.format("insert into person values('%s','%s','%s','%s','%s',%s,'%s',%s,'%s')",rut1,enterName.getText(),
 												enterLastName.getText(),enterPassword.getText(),enterMail.getText(),false,enterDirection.getText(),null,enterPhone.getText());
 										
 										try {
