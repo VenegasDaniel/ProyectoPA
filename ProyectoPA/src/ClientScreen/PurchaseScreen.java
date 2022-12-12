@@ -70,6 +70,7 @@ public class PurchaseScreen extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+		this.setLocationRelativeTo(null);
 		
 		JLabel lblNewLabel = new JLabel("Historial");
 		lblNewLabel.setBounds(41, 29, 45, 13);
@@ -77,12 +78,12 @@ public class PurchaseScreen extends JFrame {
 		contentPane.add(lblNewLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel("Historial");
-		lblNewLabel_1.setBounds(116, 22, 142, 68);
+		lblNewLabel_1.setBounds(248, 33, 142, 68);
 		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 30));
 		contentPane.add(lblNewLabel_1);
 		
 		table = new JTable();
-		table.setBounds(69, 154, 444, 270);
+		table.setBounds(72, 163, 494, 313);
 		
 		String query = String.format("select nameProduct,quantityPurchased,finalPrice from purchasePersonProduct where rutPerson = '%s'",p.getRut());
 		try {
@@ -116,18 +117,18 @@ public class PurchaseScreen extends JFrame {
 		contentPane.add(table);
 		
 		JLabel lblNewLabel_2 = new JLabel("Producto");
-		lblNewLabel_2.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblNewLabel_2.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		lblNewLabel_2.setBounds(95, 128, 83, 25);
 		contentPane.add(lblNewLabel_2);
 		
 		JLabel lblNewLabel_2_1 = new JLabel("Cantidad Comprado");
-		lblNewLabel_2_1.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		lblNewLabel_2_1.setBounds(215, 128, 152, 25);
+		lblNewLabel_2_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblNewLabel_2_1.setBounds(215, 128, 175, 25);
 		contentPane.add(lblNewLabel_2_1);
 		
 		JLabel lblNewLabel_2_2 = new JLabel("Precio Pagado");
-		lblNewLabel_2_2.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		lblNewLabel_2_2.setBounds(377, 128, 142, 25);
+		lblNewLabel_2_2.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblNewLabel_2_2.setBounds(424, 130, 142, 25);
 		contentPane.add(lblNewLabel_2_2);
 		
 		JLabel ImageLabel = new JLabel("");

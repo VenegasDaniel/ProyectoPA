@@ -66,7 +66,7 @@ public class ShowProduct extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		
+		this.setLocationRelativeTo(null);
 		
 		JLabel ImageLabel = new JLabel("");
 		ImageLabel.setBounds(55, 50, 417, 276);
@@ -108,7 +108,8 @@ public class ShowProduct extends JFrame {
 		contentPane.add(btnNewButton);
 		
 		table = new JTable();
-		table.setBounds(555, 110, 621, 325);
+		table.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		table.setBounds(535, 113, 621, 325);
 		
 		
 		try {
@@ -170,7 +171,7 @@ public class ShowProduct extends JFrame {
 			}
 		});
 		btnDejarResea.setFont(new Font("Tahoma", Font.PLAIN, 30));
-		btnDejarResea.setBounds(801, 479, 237, 40);
+		btnDejarResea.setBounds(754, 474, 237, 40);
 		contentPane.add(btnDejarResea);
 		
 	}

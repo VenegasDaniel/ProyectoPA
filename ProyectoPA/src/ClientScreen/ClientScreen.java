@@ -64,6 +64,7 @@ public class ClientScreen extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+		this.setLocationRelativeTo(null);
 		
 		JButton profileButton = new JButton("Perfil Usuario");
 		profileButton.setFont(new Font("Tahoma", Font.PLAIN, 25));
@@ -90,6 +91,7 @@ public class ClientScreen extends JFrame {
 		contentPane.add(exitButton);
 		
 		table = new JTable();
+		table.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		table.setBounds(270, 151, 626, 355);
 		
 		String query = String.format("select * from product");
@@ -261,7 +263,7 @@ public class ClientScreen extends JFrame {
 		contentPane.add(buttonViewCart);
 		
 		JComboBox Filter = new JComboBox();
-		Filter.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		Filter.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		Filter.setBounds(10, 398, 237, 45);
 		fillCategories(Filter);
 		contentPane.add(Filter);
@@ -345,6 +347,7 @@ public class ClientScreen extends JFrame {
 		contentPane.add(lblNewLabel_1);
 		
 		enterFilterName = new JTextField();
+		enterFilterName.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		enterFilterName.setBounds(307, 58, 225, 38);
 		contentPane.add(enterFilterName);
 		enterFilterName.setColumns(10);

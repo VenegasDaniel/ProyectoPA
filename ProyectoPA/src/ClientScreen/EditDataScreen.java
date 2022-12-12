@@ -57,70 +57,71 @@ public class EditDataScreen extends JFrame {
 		EditDataScreen.p = p;
 		EditDataScreen.connect = connect;
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 604, 486);
+		setBounds(100, 100, 701, 519);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+		this.setLocationRelativeTo(null);
 		
 		JLabel lblNombre = new JLabel("Nombre");
-		lblNombre.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblNombre.setBounds(57, 92, 85, 37);
+		lblNombre.setFont(new Font("Tahoma", Font.PLAIN, 30));
+		lblNombre.setBounds(57, 92, 185, 37);
 		contentPane.add(lblNombre);
 		
 		JLabel lblApellido = new JLabel("Apellido");
-		lblApellido.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblApellido.setBounds(57, 139, 85, 37);
+		lblApellido.setFont(new Font("Tahoma", Font.PLAIN, 30));
+		lblApellido.setBounds(57, 146, 143, 37);
 		contentPane.add(lblApellido);
 		
 		JLabel lblMail = new JLabel("Mail");
-		lblMail.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblMail.setBounds(57, 233, 85, 37);
+		lblMail.setFont(new Font("Tahoma", Font.PLAIN, 30));
+		lblMail.setBounds(57, 250, 85, 37);
 		contentPane.add(lblMail);
 		
 		JLabel lblContrasea = new JLabel("Contraseña");
-		lblContrasea.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblContrasea.setBounds(57, 186, 102, 37);
+		lblContrasea.setFont(new Font("Tahoma", Font.PLAIN, 30));
+		lblContrasea.setBounds(57, 203, 168, 37);
 		contentPane.add(lblContrasea);
 		
 		JLabel lblDireccion = new JLabel("Direccion");
-		lblDireccion.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblDireccion.setBounds(57, 280, 85, 37);
+		lblDireccion.setFont(new Font("Tahoma", Font.PLAIN, 30));
+		lblDireccion.setBounds(57, 303, 185, 37);
 		contentPane.add(lblDireccion);
 		
 		JLabel lblTelefono = new JLabel("Telefono");
-		lblTelefono.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblTelefono.setBounds(57, 327, 102, 37);
+		lblTelefono.setFont(new Font("Tahoma", Font.PLAIN, 30));
+		lblTelefono.setBounds(57, 363, 168, 37);
 		contentPane.add(lblTelefono);
 		
 		enterName = new JTextField();
 		enterName.setColumns(10);
-		enterName.setBounds(169, 99, 346, 32);
+		enterName.setBounds(271, 92, 357, 43);
 		contentPane.add(enterName);
 		
 		enterLastName = new JTextField();
 		enterLastName.setColumns(10);
-		enterLastName.setBounds(169, 146, 346, 32);
+		enterLastName.setBounds(271, 146, 357, 37);
 		contentPane.add(enterLastName);
 		
 		enterPassword = new JTextField();
 		enterPassword.setColumns(10);
-		enterPassword.setBounds(169, 193, 346, 32);
+		enterPassword.setBounds(271, 193, 357, 43);
 		contentPane.add(enterPassword);
 		
 		enterMail = new JTextField();
 		enterMail.setColumns(10);
-		enterMail.setBounds(169, 240, 346, 32);
+		enterMail.setBounds(271, 251, 357, 43);
 		contentPane.add(enterMail);
 		
 		enterDirection = new JTextField();
 		enterDirection.setColumns(10);
-		enterDirection.setBounds(169, 287, 346, 32);
+		enterDirection.setBounds(271, 304, 357, 43);
 		contentPane.add(enterDirection);
 		
 		enterPhone = new JTextField();
 		enterPhone.setColumns(10);
-		enterPhone.setBounds(169, 334, 346, 32);
+		enterPhone.setBounds(271, 357, 357, 43);
 		contentPane.add(enterPhone);
 		
 		
@@ -129,11 +130,11 @@ public class EditDataScreen extends JFrame {
 		
 		JLabel lblNewLabel_1 = new JLabel("Editar Datos");
 		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 35));
-		lblNewLabel_1.setBounds(181, 23, 276, 37);
+		lblNewLabel_1.setBounds(234, 21, 276, 37);
 		contentPane.add(lblNewLabel_1);
 		
 		JButton buttonFinishEdit = new JButton("TerminarEdicion");
-		buttonFinishEdit.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		buttonFinishEdit.setFont(new Font("Tahoma", Font.PLAIN, 30));
 		buttonFinishEdit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				blockData();
@@ -198,18 +199,18 @@ public class EditDataScreen extends JFrame {
 			
 			}	
 		});
-		buttonFinishEdit.setBounds(327, 402, 195, 37);
+		buttonFinishEdit.setBounds(362, 424, 276, 48);
 		contentPane.add(buttonFinishEdit);
 		
 		JButton buttonUnlock = new JButton("HabilitarEdicion");
-		buttonUnlock.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		buttonUnlock.setFont(new Font("Tahoma", Font.PLAIN, 30));
 		buttonUnlock.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				unlockData();
 			}
 
 		});
-		buttonUnlock.setBounds(57, 402, 203, 37);
+		buttonUnlock.setBounds(57, 425, 268, 47);
 		contentPane.add(buttonUnlock);
 	}
 	private void blockData() {

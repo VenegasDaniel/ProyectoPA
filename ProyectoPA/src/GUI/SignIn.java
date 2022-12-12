@@ -63,39 +63,40 @@ public class SignIn extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+		this.setLocationRelativeTo(null);
 
 		JLabel lblNewLabel = new JLabel("Rut");
-		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 30));
 		lblNewLabel.setBounds(26, 123, 162, 37);
 		contentPane.add(lblNewLabel);
 
 		JLabel lblApellido = new JLabel("Nombre");
-		lblApellido.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblApellido.setFont(new Font("Tahoma", Font.PLAIN, 30));
 		lblApellido.setBounds(25, 185, 126, 36);
 		contentPane.add(lblApellido);
 
 		JLabel lblNewLabel_1 = new JLabel("Apellido");
-		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 30));
 		lblNewLabel_1.setBounds(25, 243, 231, 37);
 		contentPane.add(lblNewLabel_1);
 
 		JLabel lblContrasea = new JLabel("Contraseña");
-		lblContrasea.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblContrasea.setFont(new Font("Tahoma", Font.PLAIN, 30));
 		lblContrasea.setBounds(26, 308, 216, 36);
 		contentPane.add(lblContrasea);
 
 		JLabel lblNewLabel_2 = new JLabel("Mail");
-		lblNewLabel_2.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblNewLabel_2.setFont(new Font("Tahoma", Font.PLAIN, 30));
 		lblNewLabel_2.setBounds(32, 370, 210, 36);
 		contentPane.add(lblNewLabel_2);
 
 		JLabel lblNewLabel_3 = new JLabel("Direccion");
-		lblNewLabel_3.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblNewLabel_3.setFont(new Font("Tahoma", Font.PLAIN, 30));
 		lblNewLabel_3.setBounds(26, 435, 162, 36);
 		contentPane.add(lblNewLabel_3);
 
 		JButton btnNewButton = new JButton("Registrar");
-		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 30));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(enterRut.getText().length() == 0 || enterName.getText().length() == 0 || enterLastName.getText().length() == 0 || 
@@ -118,7 +119,7 @@ public class SignIn extends JFrame {
 										JOptionPane.showMessageDialog(null,"El email ingresado ya existe");
 									}
 									else {
-										query = String.format("insert into person values('%s','%s','%s','%s','%s',%s,'%s',%s,%s)",enterRut.getText(),enterName.getText(),
+										query = String.format("insert into person values('%s','%s','%s','%s','%s',%s,'%s',%s,'%s')",enterRut.getText(),enterName.getText(),
 												enterLastName.getText(),enterPassword.getText(),enterMail.getText(),false,enterDirection.getText(),null,enterPhone.getText());
 										
 										try {
@@ -159,6 +160,7 @@ public class SignIn extends JFrame {
 		contentPane.add(btnNewButton);
 
 		enterDirection = new JTextField();
+		enterDirection.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		enterDirection.setColumns(10);
 		enterDirection.setBounds(333, 430, 421, 41);
 		contentPane.add(enterDirection);
@@ -171,42 +173,48 @@ public class SignIn extends JFrame {
 				SignIn.this.dispose();
 			}
 		});
-		exitButton.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		exitButton.setFont(new Font("Tahoma", Font.PLAIN, 30));
 		exitButton.setBounds(711, 31, 103, 41);
 		contentPane.add(exitButton);
 		
 		enterMail = new JTextField();
+		enterMail.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		enterMail.setColumns(10);
 		enterMail.setBounds(333, 365, 421, 41);
 		contentPane.add(enterMail);
 		
 		enterPassword = new JTextField();
+		enterPassword.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		enterPassword.setColumns(10);
 		enterPassword.setBounds(333, 303, 421, 41);
 		contentPane.add(enterPassword);
 		
 		enterLastName = new JTextField();
+		enterLastName.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		enterLastName.setColumns(10);
 		enterLastName.setBounds(333, 245, 421, 41);
 		contentPane.add(enterLastName);
 		
 		enterName = new JTextField();
+		enterName.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		enterName.setColumns(10);
 		enterName.setBounds(333, 180, 421, 41);
 		contentPane.add(enterName);
 		
 		enterRut = new JTextField();
+		enterRut.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		enterRut.setColumns(10);
 		enterRut.setBounds(333, 125, 421, 41);
 		contentPane.add(enterRut);
 		
 		enterPhone = new JTextField();
+		enterPhone.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		enterPhone.setColumns(10);
 		enterPhone.setBounds(333, 493, 421, 41);
 		contentPane.add(enterPhone);
 		
 		JLabel lblNewLabel_3_1 = new JLabel("Telefono");
-		lblNewLabel_3_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblNewLabel_3_1.setFont(new Font("Tahoma", Font.PLAIN, 30));
 		lblNewLabel_3_1.setBounds(26, 498, 162, 36);
 		contentPane.add(lblNewLabel_3_1);
 	}

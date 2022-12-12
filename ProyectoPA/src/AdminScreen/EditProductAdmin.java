@@ -65,7 +65,7 @@ public class EditProductAdmin extends JFrame {
 		EditProductAdmin.connect = connect;
 		EditProductAdmin.p = p;
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 800, 486);
+		setBounds(100, 100, 800, 456);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
@@ -78,6 +78,7 @@ public class EditProductAdmin extends JFrame {
 		contentPane.add(lblName);
 		
 		enterName = new JTextField();
+		enterName.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		enterName.setColumns(10);
 		enterName.setBounds(175, 85, 346, 32);
 		contentPane.add(enterName);
@@ -88,16 +89,18 @@ public class EditProductAdmin extends JFrame {
 		contentPane.add(lblCategory);
 		
 		enterCategory = new JTextField();
+		enterCategory.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		enterCategory.setColumns(10);
 		enterCategory.setBounds(175, 132, 346, 32);
 		contentPane.add(enterCategory);
 		
 		JLabel lblDescription = new JLabel("Descripcion");
 		lblDescription.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblDescription.setBounds(63, 172, 85, 37);
+		lblDescription.setBounds(63, 172, 102, 37);
 		contentPane.add(lblDescription);
 		
 		enterDescription = new JTextField();
+		enterDescription.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		enterDescription.setColumns(10);
 		enterDescription.setBounds(175, 179, 346, 32);
 		contentPane.add(enterDescription);
@@ -108,6 +111,7 @@ public class EditProductAdmin extends JFrame {
 		contentPane.add(lblPrice);
 		
 		enterPrice = new JTextField();
+		enterPrice.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		enterPrice.setColumns(10);
 		enterPrice.setBounds(175, 226, 346, 32);
 		contentPane.add(enterPrice);
@@ -118,6 +122,7 @@ public class EditProductAdmin extends JFrame {
 		contentPane.add(lblStock);
 		
 		enterStock = new JTextField();
+		enterStock.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		enterStock.setColumns(10);
 		enterStock.setBounds(175, 273, 346, 32);
 		contentPane.add(enterStock);
@@ -127,7 +132,7 @@ public class EditProductAdmin extends JFrame {
 		blockData();
 		
 		JButton buttonFinishEdit = new JButton("TerminarEdicion");
-		buttonFinishEdit.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		buttonFinishEdit.setFont(new Font("Tahoma", Font.PLAIN, 25));
 		buttonFinishEdit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				blockData();
@@ -147,18 +152,18 @@ public class EditProductAdmin extends JFrame {
 				EditProductAdmin.this.dispose();	
 			}	
 		});
-		buttonFinishEdit.setBounds(326, 346, 195, 37);
+		buttonFinishEdit.setBounds(296, 346, 240, 37);
 		contentPane.add(buttonFinishEdit);
 		
 		JButton buttonUnlock = new JButton("HabilitarEdicion");
-		buttonUnlock.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		buttonUnlock.setFont(new Font("Tahoma", Font.PLAIN, 25));
 		buttonUnlock.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				unlockData();
 			}
 
 		});
-		buttonUnlock.setBounds(63, 346, 203, 37);
+		buttonUnlock.setBounds(47, 346, 239, 37);
 		contentPane.add(buttonUnlock);
 		
 		JLabel lblNewLabel_1 = new JLabel("Editar Datos");
@@ -192,7 +197,7 @@ public class EditProductAdmin extends JFrame {
 		}
 		
 		JButton uploadPhotoButton = new JButton("Subir Foto");
-		uploadPhotoButton.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		uploadPhotoButton.setFont(new Font("Tahoma", Font.PLAIN, 25));
 		uploadPhotoButton.setBounds(559, 348, 201, 35);
 		uploadPhotoButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {

@@ -57,34 +57,39 @@ public class Login extends JFrame {
 	 */
 	public Login(ConnectionDB connect) {
 		setTitle("Login");
-		setBounds(100, 100, 538, 351);
+		setBounds(100, 100, 975, 561);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+		this.setLocationRelativeTo(null);
 		
 		textField = new JTextField();
-		textField.setBounds(114, 60, 164, 29);
+		textField.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		textField.setBounds(318, 108, 307, 75);
 		contentPane.add(textField);
 		textField.setColumns(10);
 		
 		JLabel icon_User = new JLabel("Usuario");
 		icon_User.setHorizontalAlignment(SwingConstants.CENTER);
-		icon_User.setFont(new Font("Tahoma", Font.PLAIN, 25));
-		icon_User.setBounds(114, 25, 139, 25);
+		icon_User.setFont(new Font("Tahoma", Font.PLAIN, 40));
+		icon_User.setBounds(318, 49, 307, 49);
 		contentPane.add(icon_User);
 		
 		JLabel lblNewLabel_1_1 = new JLabel("Contrasena");
-		lblNewLabel_1_1.setFont(new Font("Tahoma", Font.PLAIN, 25));
-		lblNewLabel_1_1.setBounds(114, 99, 164, 29);
+		lblNewLabel_1_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_1_1.setFont(new Font("Tahoma", Font.PLAIN, 40));
+		lblNewLabel_1_1.setBounds(318, 193, 307, 46);
 		contentPane.add(lblNewLabel_1_1);
 		
 		textField_1 = new JTextField();
+		textField_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		textField_1.setColumns(10);
-		textField_1.setBounds(114, 138, 164, 29);
+		textField_1.setBounds(318, 249, 307, 75);
 		contentPane.add(textField_1);
 		//login button creation and function
 		JButton login = new JButton("Login");
+		login.setFont(new Font("Tahoma", Font.PLAIN, 40));
 		login.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				ArrayList<String> l = null;
@@ -147,17 +152,18 @@ public class Login extends JFrame {
 
 			}
 		});
-		login.setBounds(114, 188, 164, 38);
+		login.setBounds(318, 334, 307, 82);
 		contentPane.add(login);
 		
 		
 		
 		JLabel lblNewLabel = new JLabel("No tienes una cuenta?");
-		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblNewLabel.setBounds(115, 246, 219, 46);
+		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 40));
+		lblNewLabel.setBounds(240, 450, 422, 46);
 		contentPane.add(lblNewLabel);
 		
 		JButton signUp = new JButton("Registrate");
+		signUp.setFont(new Font("Tahoma", Font.PLAIN, 40));
 		signUp.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				SignIn si = new SignIn(connect);
@@ -165,11 +171,11 @@ public class Login extends JFrame {
 				Login.this.dispose();
 			}
 		});
-		signUp.setBounds(318, 254, 139, 38);
+		signUp.setBounds(673, 432, 216, 82);
 		contentPane.add(signUp);
 		
 		JButton closeProgram = new JButton("");
-		closeProgram.setBounds(441, 10, 100,32);
+		closeProgram.setBounds(728, 10, 190, 88);
 		ImageIcon image = new ImageIcon("Media/Exit3.png");
 		Icon icon = new ImageIcon(image.getImage().getScaledInstance(closeProgram.getWidth(), closeProgram.getHeight(), Image.SCALE_DEFAULT));
 		closeProgram.setIcon(icon);
@@ -180,7 +186,7 @@ public class Login extends JFrame {
 			}
 		});
 		closeProgram.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		closeProgram.setBounds(441, 10, 73, 29);
+		closeProgram.setBounds(728, 10, 190, 88);
 		contentPane.add(closeProgram);
 	}
 	private String validateRut(String rut) {

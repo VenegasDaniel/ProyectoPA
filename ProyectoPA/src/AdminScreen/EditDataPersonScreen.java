@@ -58,6 +58,7 @@ public class EditDataPersonScreen extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+		this.setLocationRelativeTo(null);
 		
 		JLabel lblNombre = new JLabel("Nombre");
 		lblNombre.setFont(new Font("Tahoma", Font.PLAIN, 20));
@@ -90,31 +91,37 @@ public class EditDataPersonScreen extends JFrame {
 		contentPane.add(lblTelefono);
 		
 		enterName = new JTextField();
+		enterName.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		enterName.setColumns(10);
 		enterName.setBounds(169, 99, 346, 32);
 		contentPane.add(enterName);
 		
 		enterLastName = new JTextField();
+		enterLastName.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		enterLastName.setColumns(10);
 		enterLastName.setBounds(169, 146, 346, 32);
 		contentPane.add(enterLastName);
 		
 		enterPassword = new JTextField();
+		enterPassword.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		enterPassword.setColumns(10);
 		enterPassword.setBounds(169, 193, 346, 32);
 		contentPane.add(enterPassword);
 		
 		enterMail = new JTextField();
+		enterMail.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		enterMail.setColumns(10);
 		enterMail.setBounds(169, 240, 346, 32);
 		contentPane.add(enterMail);
 		
 		enterDirection = new JTextField();
+		enterDirection.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		enterDirection.setColumns(10);
 		enterDirection.setBounds(169, 287, 346, 32);
 		contentPane.add(enterDirection);
 		
 		enterPhone = new JTextField();
+		enterPhone.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		enterPhone.setColumns(10);
 		enterPhone.setBounds(169, 334, 346, 32);
 		contentPane.add(enterPhone);
@@ -125,7 +132,7 @@ public class EditDataPersonScreen extends JFrame {
 		
 		JLabel lblNewLabel_1 = new JLabel("Editar Datos");
 		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 35));
-		lblNewLabel_1.setBounds(181, 23, 276, 37);
+		lblNewLabel_1.setBounds(198, 25, 276, 37);
 		contentPane.add(lblNewLabel_1);
 		
 		JButton buttonFinishEdit = new JButton("TerminarEdicion");

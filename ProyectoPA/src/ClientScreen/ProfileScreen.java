@@ -71,15 +71,16 @@ public class ProfileScreen extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+		this.setLocationRelativeTo(null);
 		
 		JLabel lblNewLabel_1 = new JLabel("Perfil Usuario");
-		lblNewLabel_1.setBounds(89, 0, 271, 116);
+		lblNewLabel_1.setBounds(88, 0, 271, 116);
 		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 45));
 		contentPane.add(lblNewLabel_1);
 		
 		JButton viewPurchasesButton = new JButton("Historial Compras");
 		viewPurchasesButton.setFont(new Font("Tahoma", Font.PLAIN, 25));
-		viewPurchasesButton.setBounds(25, 228, 247, 124);
+		viewPurchasesButton.setBounds(25, 276, 247, 124);
 		viewPurchasesButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				PurchaseScreen ps = new PurchaseScreen(p,connect);
@@ -92,7 +93,7 @@ public class ProfileScreen extends JFrame {
 		JButton editDataButton = new JButton("Editar Datos");
 		editDataButton.setFont(new Font("Tahoma", Font.PLAIN, 25));
 		editDataButton.setBackground(Color.WHITE);
-		editDataButton.setBounds(25, 100, 247, 116);
+		editDataButton.setBounds(25, 108, 247, 116);
 		editDataButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				EditDataScreen eds = new EditDataScreen(p,connect);
@@ -116,6 +117,7 @@ public class ProfileScreen extends JFrame {
 		}
 		
 		JButton uploadPhotoButton = new JButton("Subir Foto");
+		uploadPhotoButton.setFont(new Font("Tahoma", Font.PLAIN, 30));
 		uploadPhotoButton.setBounds(395, 431, 201, 59);
 		uploadPhotoButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -164,6 +166,7 @@ public class ProfileScreen extends JFrame {
 		contentPane.add(uploadPhotoButton);
 		
 		JButton exitButton = new JButton("Salir");
+		exitButton.setFont(new Font("Tahoma", Font.PLAIN, 30));
 		exitButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				ClientScreen cs = new ClientScreen(p,connect);

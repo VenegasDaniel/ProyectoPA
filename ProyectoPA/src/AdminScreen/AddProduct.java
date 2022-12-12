@@ -62,9 +62,8 @@ public class AddProduct extends JFrame {
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
-		
 		contentPane.setLayout(null);
-		contentPane.setLayout(null);
+		this.setLocationRelativeTo(null);
 		
 		JLabel ImageLabel = new JLabel("");
 		ImageLabel.setBounds(451, 150, 379, 321);
@@ -120,13 +119,14 @@ public class AddProduct extends JFrame {
 		contentPane.add(uploadPhotoButton);
 		
 		enterCategory = new JTextField();
-		enterCategory.setBounds(60, 92, 325, 33);
+		enterCategory.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		enterCategory.setBounds(60, 80, 325, 45);
 		contentPane.add(enterCategory);
 		enterCategory.setColumns(10);
 		
 		JLabel lblNewLabel = new JLabel("Categoria");
 		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 30));
-		lblNewLabel.setBounds(138, 44, 168, 38);
+		lblNewLabel.setBounds(138, 35, 168, 38);
 		contentPane.add(lblNewLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel("Descripcion");
@@ -135,28 +135,31 @@ public class AddProduct extends JFrame {
 		contentPane.add(lblNewLabel_1);
 		
 		enterDescription = new JTextField();
+		enterDescription.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		enterDescription.setColumns(10);
 		enterDescription.setBounds(60, 183, 325, 98);
 		contentPane.add(enterDescription);
 		
 		enterPrice = new JTextField();
+		enterPrice.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		enterPrice.setColumns(10);
-		enterPrice.setBounds(60, 339, 325, 33);
+		enterPrice.setBounds(60, 339, 325, 45);
 		contentPane.add(enterPrice);
 		
 		JLabel lblNewLabel_1_1 = new JLabel("Precio");
 		lblNewLabel_1_1.setFont(new Font("Tahoma", Font.PLAIN, 30));
-		lblNewLabel_1_1.setBounds(138, 291, 168, 38);
+		lblNewLabel_1_1.setBounds(168, 291, 168, 38);
 		contentPane.add(lblNewLabel_1_1);
 		
 		enterStock = new JTextField();
+		enterStock.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		enterStock.setColumns(10);
-		enterStock.setBounds(60, 438, 325, 33);
+		enterStock.setBounds(60, 427, 325, 44);
 		contentPane.add(enterStock);
 		
 		JLabel lblNewLabel_1_2 = new JLabel("Stock");
 		lblNewLabel_1_2.setFont(new Font("Tahoma", Font.PLAIN, 30));
-		lblNewLabel_1_2.setBounds(138, 382, 168, 38);
+		lblNewLabel_1_2.setBounds(168, 382, 168, 38);
 		contentPane.add(lblNewLabel_1_2);
 		
 		JButton btnSalir = new JButton("Salir");
@@ -227,6 +230,7 @@ public class AddProduct extends JFrame {
 		contentPane.add(btnAgregarproducto);
 		
 		enterNameProduct = new JTextField();
+		enterNameProduct.setFont(new Font("Tahoma", Font.PLAIN, 30));
 		enterNameProduct.setEditable(false);
 		enterNameProduct.setColumns(10);
 		enterNameProduct.setBounds(489, 107, 325, 33);

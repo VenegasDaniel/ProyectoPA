@@ -53,8 +53,10 @@ public class CategoryAdmin extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
+		this.setLocationRelativeTo(null);
 		
 		table = new JTable();
+		table.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		table.setSurrendersFocusOnKeystroke(true);
 		table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		table.setBounds(21, 39, 191, 295);
@@ -95,13 +97,13 @@ public class CategoryAdmin extends JFrame {
 		
 		
 		JLabel lblNewLabel = new JLabel("Categorias");
-		lblNewLabel.setBounds(235, 40, 125, 25);
-		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblNewLabel.setBounds(233, 58, 177, 34);
+		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 30));
 		contentPane.add(lblNewLabel);
 		
 		JButton buttonEditProduct = new JButton("Editar categoria");
-		buttonEditProduct.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		buttonEditProduct.setBounds(219, 93, 157, 45);
+		buttonEditProduct.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		buttonEditProduct.setBounds(222, 114, 191, 45);
 		buttonEditProduct.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				int row = table.getSelectedRow();
@@ -179,7 +181,7 @@ public class CategoryAdmin extends JFrame {
 		contentPane.add(buttonEditProduct);
 		
 		JButton buttonAddCategory = new JButton("Añadir Categoria");
-		buttonAddCategory.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		buttonAddCategory.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		buttonAddCategory.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String newCategory = JOptionPane.showInputDialog("Ingrese el nuevo nombre para la categoria");
@@ -215,7 +217,7 @@ public class CategoryAdmin extends JFrame {
 
 			}
 		});
-		buttonAddCategory.setBounds(219, 169, 157, 45);
+		buttonAddCategory.setBounds(219, 190, 191, 45);
 		contentPane.add(buttonAddCategory);
 		
 		JButton buttonAddCategory_1 = new JButton("Eliminar Categoria");
@@ -255,8 +257,8 @@ public class CategoryAdmin extends JFrame {
 				}
 			}
 		});
-		buttonAddCategory_1.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		buttonAddCategory_1.setBounds(220, 245, 157, 45);
+		buttonAddCategory_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		buttonAddCategory_1.setBounds(222, 260, 190, 45);
 		contentPane.add(buttonAddCategory_1);
 		
 		JButton btnSalir = new JButton("Salir");

@@ -57,8 +57,10 @@ public class UserAdmin extends JFrame {
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
+		this.setLocationRelativeTo(null);
 		
 		table = new JTable();
+		table.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		table.setBounds(48, 150, 396, 295);
 		table.setSurrendersFocusOnKeystroke(true);
 		table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
@@ -102,7 +104,7 @@ public class UserAdmin extends JFrame {
 		contentPane.add(lblNewLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel("Usuarios");
-		lblNewLabel_1.setBounds(497, 150, 83, 25);
+		lblNewLabel_1.setBounds(495, 151, 83, 25);
 		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		contentPane.add(lblNewLabel_1);
 		
@@ -112,7 +114,7 @@ public class UserAdmin extends JFrame {
 		contentPane.add(lblPrecio);
 		
 		JButton btnNewButton = new JButton("Eliminar");
-		btnNewButton.setBounds(476, 263, 127, 45);
+		btnNewButton.setBounds(470, 313, 145, 45);
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				int row = table.getSelectedRow();
@@ -141,11 +143,11 @@ public class UserAdmin extends JFrame {
                 }
 			}
 		});
-		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		contentPane.add(btnNewButton);
 		
 		JButton btnNewButton1 = new JButton("Editar");
-		btnNewButton1.setBounds(476, 356, 127, 45);
+		btnNewButton1.setBounds(470, 385, 145, 45);
 		btnNewButton1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				int row = table.getSelectedRow();
@@ -170,7 +172,7 @@ public class UserAdmin extends JFrame {
 				}
 			}
 		});
-		btnNewButton1.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		btnNewButton1.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		contentPane.add(btnNewButton1);
 		
 		
@@ -182,9 +184,63 @@ public class UserAdmin extends JFrame {
 				UserAdmin.this.dispose();
 			}
 		});
-		btnSalir.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		btnSalir.setBounds(459, 36, 119, 34);
+		btnSalir.setFont(new Font("Tahoma", Font.PLAIN, 30));
+		btnSalir.setBounds(484, 36, 119, 37);
 		contentPane.add(btnSalir);
+		
+		JButton ButtonBlock = new JButton("Bloquear");
+		ButtonBlock.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				int row = table.getSelectedRow();
+                if(row >= 0) {
+                    String rut = (String) table.getValueAt(row, 0);
+                    try {
+                    	String query = String.format("update person set statePerson = true where rut = '%s'",rut);
+                        connect.UpdateData(query);;
+                        UserAdmin.this.dispose();
+                        JOptionPane.showMessageDialog(null,"Persona Bloqueada con existo,Se refrescara la pestaña");
+                        UserAdmin ua = new UserAdmin(connect);
+                        ua.setVisible(true);
+                    } catch (Exception e1) {
+                        // TODO Auto-generated catch block
+                        e1.printStackTrace();
+                    }
+                }
+                else {
+                    JOptionPane.showMessageDialog(null,"Debe seleccionar la casilla que desea ver");
+                }
+			}
+		});
+		ButtonBlock.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		ButtonBlock.setBounds(470, 186, 145, 45);
+		contentPane.add(ButtonBlock);
+		
+		JButton buttonUnlock = new JButton("Desbloquear");
+		buttonUnlock.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				int row = table.getSelectedRow();
+                if(row >= 0) {
+                    String rut = (String) table.getValueAt(row, 0);
+                    try {
+                    	String query = String.format("update person set statePerson = false where rut = '%s'",rut);
+                        connect.UpdateData(query);;
+                        UserAdmin.this.dispose();
+                        JOptionPane.showMessageDialog(null,"Persona Desbloqueada con existo,Se refrescara la pestaña");
+                        UserAdmin ua = new UserAdmin(connect);
+                        ua.setVisible(true);
+                    } catch (Exception e1) {
+                        // TODO Auto-generated catch block
+                        e1.printStackTrace();
+                    }
+                }
+                else {
+                    JOptionPane.showMessageDialog(null,"Debe seleccionar la casilla que desea ver");
+                }
+			}
+		});
+		buttonUnlock.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		buttonUnlock.setBounds(470, 247, 145, 45);
+		contentPane.add(buttonUnlock);
 		
 	}
 	
@@ -198,5 +254,4 @@ public class UserAdmin extends JFrame {
 		}
 		
 	}
-
 }

@@ -52,6 +52,7 @@ public class AdminScreen extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+		this.setLocationRelativeTo(null);
 		
 		JButton btnNewButton = new JButton("Manejar Productos");
 		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 15));

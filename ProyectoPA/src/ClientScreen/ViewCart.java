@@ -61,15 +61,16 @@ public class ViewCart extends JFrame {
 		ViewCart.connect = connect;
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 588, 521);
+		setBounds(100, 100, 679, 521);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
-
+		this.setLocationRelativeTo(null);
+		
 		table = new JTable();
 		table.setSurrendersFocusOnKeystroke(true);
 		table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-		table.setBounds(28, 70, 415, 321);
+		table.setBounds(28, 70, 495, 321);
 		
 		
 		String query = String.format("select * from shoppingCart where rutPerson = '%s'",p.getRut());
@@ -108,17 +109,17 @@ public class ViewCart extends JFrame {
 		
 		JLabel lblNewLabel = new JLabel("Producto");
 		lblNewLabel.setBounds(61, 43, 101, 17);
-		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		contentPane.add(lblNewLabel);
 		
 		JLabel lblCantidadAComprar = new JLabel("Cantidad A Comprar");
-		lblCantidadAComprar.setBounds(172, 43, 141, 17);
-		lblCantidadAComprar.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblCantidadAComprar.setBounds(172, 43, 178, 17);
+		lblCantidadAComprar.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		contentPane.add(lblCantidadAComprar);
 		
 		JLabel lblPreciofinal = new JLabel("PrecioFinal");
-		lblPreciofinal.setBounds(323, 43, 101, 17);
-		lblPreciofinal.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblPreciofinal.setBounds(382, 45, 101, 17);
+		lblPreciofinal.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		contentPane.add(lblPreciofinal);
 		
 		JButton btnNewButton = new JButton("Salir");
@@ -129,7 +130,7 @@ public class ViewCart extends JFrame {
 				ViewCart.this.dispose();
 			}
 		});
-		btnNewButton.setBounds(444, 24, 120, 43);
+		btnNewButton.setBounds(535, 26, 120, 43);
 		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 30));
 		contentPane.add(btnNewButton);
 		
@@ -177,7 +178,7 @@ public class ViewCart extends JFrame {
 			}
 
 		});
-		btnPagarcarrito.setBounds(310, 435, 213, 43);
+		btnPagarcarrito.setBounds(323, 431, 213, 43);
 		btnPagarcarrito.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		contentPane.add(btnPagarcarrito);
 		
@@ -204,7 +205,7 @@ public class ViewCart extends JFrame {
 				}
 			}
 		});
-		btnEliminarDeCarrito.setBounds(43, 435, 229, 43);
+		btnEliminarDeCarrito.setBounds(43, 431, 229, 43);
 		btnEliminarDeCarrito.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		contentPane.add(btnEliminarDeCarrito);
 	}

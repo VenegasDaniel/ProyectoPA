@@ -57,8 +57,10 @@ public class ProductsAdmin extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		
 		setContentPane(contentPane);
+		this.setLocationRelativeTo(null);
 		
 		table = new JTable();
+		table.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		table.setSurrendersFocusOnKeystroke(true);
 		table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		table.setBounds(69, 143, 461, 323);
@@ -112,7 +114,7 @@ public class ProductsAdmin extends JFrame {
 		contentPane.add(lblStock);
 		
 		JButton buttonEditProduct = new JButton("Editar producto");
-		buttonEditProduct.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		buttonEditProduct.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		buttonEditProduct.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				int row = table.getSelectedRow();
@@ -136,7 +138,7 @@ public class ProductsAdmin extends JFrame {
 				}
 			}
 		});
-		buttonEditProduct.setBounds(571, 159, 157, 45);
+		buttonEditProduct.setBounds(571, 159, 203, 45);
 		contentPane.add(buttonEditProduct);
 		
 		JButton buttonDelete = new JButton("Eliminar Producto");
@@ -168,12 +170,12 @@ public class ProductsAdmin extends JFrame {
                 }
 			}
 		});
-		buttonDelete.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		buttonDelete.setBounds(571, 264, 157, 45);
+		buttonDelete.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		buttonDelete.setBounds(571, 264, 203, 45);
 		contentPane.add(buttonDelete);
 		
 		JButton buttonAddProduct = new JButton("Añadir Producto");
-		buttonAddProduct.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		buttonAddProduct.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		buttonAddProduct.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String nameProduct = JOptionPane.showInputDialog("Ingrese el nombre del nuevo producto");
@@ -196,7 +198,7 @@ public class ProductsAdmin extends JFrame {
 
 			}
 		});
-		buttonAddProduct.setBounds(571, 377, 157, 45);
+		buttonAddProduct.setBounds(571, 377, 203, 45);
 		contentPane.add(buttonAddProduct);
 		
 		JButton exitButton = new JButton("Salir");
@@ -207,8 +209,8 @@ public class ProductsAdmin extends JFrame {
 				ProductsAdmin.this.dispose();
 			}
 		});
-		exitButton.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		exitButton.setBounds(607, 10, 103, 41);
+		exitButton.setFont(new Font("Tahoma", Font.PLAIN, 30));
+		exitButton.setBounds(637, 32, 119, 50);
 		contentPane.add(exitButton);
 		
 	}
