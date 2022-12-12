@@ -103,7 +103,7 @@ public class CategoryAdmin extends JFrame {
 		
 		JButton buttonEditProduct = new JButton("Editar categoria");
 		buttonEditProduct.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		buttonEditProduct.setBounds(222, 114, 191, 45);
+		buttonEditProduct.setBounds(222, 114, 204, 45);
 		buttonEditProduct.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				int row = table.getSelectedRow();
@@ -217,7 +217,7 @@ public class CategoryAdmin extends JFrame {
 
 			}
 		});
-		buttonAddCategory.setBounds(219, 190, 191, 45);
+		buttonAddCategory.setBounds(222, 190, 204, 45);
 		contentPane.add(buttonAddCategory);
 		
 		JButton buttonAddCategory_1 = new JButton("Eliminar Categoria");
@@ -258,7 +258,7 @@ public class CategoryAdmin extends JFrame {
 			}
 		});
 		buttonAddCategory_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		buttonAddCategory_1.setBounds(222, 260, 190, 45);
+		buttonAddCategory_1.setBounds(222, 260, 204, 45);
 		contentPane.add(buttonAddCategory_1);
 		
 		JButton btnSalir = new JButton("Salir");
